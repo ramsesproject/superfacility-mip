@@ -1,0 +1,180 @@
+# ESnet01.dat - AMPL data file
+# AMPL data file for small version of ESnet
+#
+# Created by Sven Leyffer, Argonne National Laboratory, May/June 2017
+######################################################################
+data;
+set Sites      := ALS APS LCLS NSLS SSRL; # ... science sites
+set Resources  := ANL NERSC ORNL;           # ... compute resources
+set TransNodes := STAR BOST SACR ELPA WASH NEWY SUNN BNL ALBQ CHIC SLAC ATLA
+AOFA HOUS ANL DENV KANS NASH LBL;
+# ... define set of links 
+set Links := (SUNN,NERSC), (APS,ANL), (ELPA,ALBQ), (SACR,SUNN), (SSRL,SLAC), (DENV,SACR), (WASH,CHIC), (NASH,WASH), (WASH,NASH), (ELPA,SUNN), (SACR,DENV), (AOFA,STAR), (SUNN,ELPA), (BNL,NEWY), (SUNN,SACR), (ATLA,NASH), (CHIC,STAR), (STAR,ANL), (LCLS,SLAC), (ATLA,ORNL), (NASH,ATLA), (ALBQ,DENV), (NASH,HOUS), (HOUS,KANS), (BOST,STAR), (NEWY,BOST), (CHIC,KANS), (LBL,SUNN), (ELPA,HOUS), (CHIC,NASH), (KANS,HOUS), (STAR,CHIC), (DENV,KANS), (STAR,AOFA), (KANS,CHIC), (CHIC,WASH), (NSLS,BNL), (HOUS,ELPA), (AOFA,WASH), (ALS,LBL), (HOUS,NASH), (SLAC,SUNN), (WASH,ATLA), (WASH,AOFA), (KANS,DENV), (ANL,STAR), (NASH,CHIC), (NEWY,AOFA);
+
+param Bw [*,*]
+: 	 STAR    BOST    SACR    SSRL    ELPA    ORNL    NEWY    SUNN    BNL ALBQ    CHIC    SLAC    ATLA    NSLS    AOFA    HOUS    ANL    APS    NERSC DENV    KANS    WASH    ALS    NASH    LCLS    LBL :=
+STAR    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    2500.0    .    2500.0    .    .    .    .    .    .    .    .    .
+BOST    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+SACR    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .
+SSRL    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+ELPA    .    .    .    .    .    .    .    2500.0    .    2500.0    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .
+ORNL    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+NEWY    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .
+SUNN    .    .    2500.0    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .    .
+BNL    .    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+ALBQ    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .
+CHIC    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    2500.0    2500.0    .    2500.0    .    .
+SLAC    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+ATLA    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .
+NSLS    .    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+AOFA    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    .
+HOUS    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    2500.0    .    .
+ANL    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+APS    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .
+NERSC    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+DENV    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    .    .
+KANS    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    .    2500.0    .    .    .    2500.0    .    .    .    .    .    .
+WASH    .    .    .    .    .    .    .    .    .    .    2500.0    .    2500.0    .    2500.0    .    .    .    .    .    .    .    .    2500.0    .    .
+ALS    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    2500.0
+NASH    .    .    .    .    .    .    .    .    .    .    2500.0    .    2500.0    .    .    2500.0    .    .    .    .    .    2500.0    .    .    .    .
+LCLS    .    .    .    .    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+LBL    .    .    .    .    .    .    .    2500.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+;
+
+#let JobIds     := 1..1642;                 # ... job identifiers
+#let Time       := 1..172800;               # ... time intervals
+let JobIds     := 1..11;                    # ... job identifiers
+let Time       := 1..1000;                  # ... time intervals
+
+# ... fixed delays due to network vs. neighboring sites
+let{s in Sites, r in Resources} TD[s,r] := 1.1;
+let TD['ALS','NERSC'] := 0.1;
+let TD['APS','ANL'] := 0.1;
+
+data;
+#param ComputeBudget := 24000;
+param ComputeBudget := 3096;
+param Perc := 0.95;
+param SlowDown := 5;
+
+# ... define the job queue
+param : Jobs:   T0   NumNodes  RunTime  DataSize MaxDelayMult:= 
+1, LCLS, 3, 203, 99, 871922.021, 1.50
+1, SSRL, 5, 163, 189, 8246.828, 1.40
+2, SSRL, 13, 38, 265, 10278.800, 1.97
+2, LCLS, 38, 191, 7, 990960.362, 80.00
+3, LCLS, 38, 102, 225, 927609.456, 1.23
+3, SSRL, 65, 97, 354, 6900.053, 1.90
+4, SSRL, 77, 179, 75, 16232.394, 1.90
+1, ALS, 90, 134, 245, 3769.960, 1.34
+2, ALS, 90, 238, 112, 3769.960, 1.32
+3, ALS, 90, 186, 13, 3769.960, 1.70
+4, ALS, 90, 56, 251, 3769.960, 1.50
+5, ALS, 90, 177, 93, 3769.960, 1.42
+6, ALS, 90, 61, 138, 3769.960, 1.46
+4, LCLS, 102, 31, 317, 890731.518, 1.17
+5, SSRL, 127, 87, 349, 9000.403, 1.51
+7, ALS, 132, 58, 7, 11887.320, 1.50
+5, LCLS, 135, 98, 256, 935895.531, 1.79
+8, ALS, 138, 140, 69, 22660.301, 1.87
+9, ALS, 149, 197, 24, 1509.949, 1.38
+10, ALS, 150, 242, 113, 5662.310, 1.39
+1, APS, 182, 35, 120, 5575.083, 1.92
+11, ALS, 190, 225, 136, 13107.200, 1.62
+6, LCLS, 233, 143, 141, 872072.255, 1.12
+6, SSRL, 238, 11, 86, 2368.709, 1.50
+7, SSRL, 241, 179, 154, 12990.404, 1.53
+7, LCLS, 243, 249, 26, 847300.642, 1.82
+8, SSRL, 250, 222, 235, 8458.011, 1.70
+8, LCLS, 279, 40, 154, 998376.491, 1.51
+9, LCLS, 338, 85, 45, 970192.954, 1.87
+10, LCLS, 343, 112, 102, 980480.490, 1.79
+# minT: 485, maxJid: 11
+;
+
+# number of paths for each o-d
+let numPaths['ALS', 'ORNL'] := 5;
+let numPaths['LCLS', 'ORNL'] := 5;
+let numPaths['ALS', 'ANL'] := 5;
+let numPaths['NSLS', 'ANL'] := 5;
+let numPaths['APS', 'ANL'] := 1;
+let numPaths['SSRL', 'NERSC'] := 1;
+let numPaths['SSRL', 'ANL'] := 5;
+let numPaths['LCLS', 'ANL'] := 5;
+let numPaths['ALS', 'NERSC'] := 1;
+let numPaths['SSRL', 'ORNL'] := 5;
+let numPaths['APS', 'ORNL'] := 5;
+let numPaths['APS', 'NERSC'] := 5;
+let numPaths['LCLS', 'NERSC'] := 1;
+let numPaths['NSLS', 'ORNL'] := 5;
+let numPaths['NSLS', 'NERSC'] := 5;
+
+data;
+
+set Paths[ALS, ORNL, 1] := (ALS,LBL), (LBL,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[ALS, ORNL, 2] := (ALS,LBL), (LBL,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[ALS, ORNL, 3] := (ALS,LBL), (LBL,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,CHIC), (CHIC,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[ALS, ORNL, 4] := (ALS,LBL), (LBL,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,KANS), (KANS,CHIC), (CHIC,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[ALS, ORNL, 5] := (ALS,LBL), (LBL,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,KANS), (KANS,CHIC), (CHIC,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[LCLS, ORNL, 1] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[LCLS, ORNL, 2] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[LCLS, ORNL, 3] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,CHIC), (CHIC,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[LCLS, ORNL, 4] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,KANS), (KANS,CHIC), (CHIC,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[LCLS, ORNL, 5] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,KANS), (KANS,CHIC), (CHIC,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[ALS, ANL, 1] := (ALS,LBL), (LBL,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[ALS, ANL, 2] := (ALS,LBL), (LBL,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,KANS), (KANS,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[ALS, ANL, 3] := (ALS,LBL), (LBL,SUNN), (SUNN,SACR), (SACR,DENV), (DENV,KANS), (KANS,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[ALS, ANL, 4] := (ALS,LBL), (LBL,SUNN), (SUNN,ELPA), (ELPA,ALBQ), (ALBQ,DENV), (DENV,KANS), (KANS,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[ALS, ANL, 5] := (ALS,LBL), (LBL,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,WASH), (WASH,AOFA), (AOFA,STAR), (STAR,ANL);
+set Paths[NSLS, ANL, 1] := (NSLS,BNL), (BNL,NEWY), (NEWY,BOST), (BOST,STAR), (STAR,ANL);
+set Paths[NSLS, ANL, 2] := (NSLS,BNL), (BNL,NEWY), (NEWY,AOFA), (AOFA,STAR), (STAR,ANL);
+set Paths[NSLS, ANL, 3] := (NSLS,BNL), (BNL,NEWY), (NEWY,AOFA), (AOFA,WASH), (WASH,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[NSLS, ANL, 4] := (NSLS,BNL), (BNL,NEWY), (NEWY,AOFA), (AOFA,WASH), (WASH,NASH), (NASH,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[NSLS, ANL, 5] := (NSLS,BNL), (BNL,NEWY), (NEWY,AOFA), (AOFA,WASH), (WASH,ATLA), (ATLA,NASH), (NASH,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[APS, ANL, 1] := (APS,ANL);
+set Paths[SSRL, NERSC, 1] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,NERSC);
+set Paths[LCLS, ANL, 1] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[LCLS, ANL, 2] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,KANS), (KANS,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[LCLS, ANL, 3] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,SACR), (SACR,DENV), (DENV,KANS), (KANS,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[LCLS, ANL, 4] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,ALBQ), (ALBQ,DENV), (DENV,KANS), (KANS,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[LCLS, ANL, 5] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,WASH), (WASH,AOFA), (AOFA,STAR), (STAR,ANL);
+set Paths[NSLS, ORNL, 1] := (NSLS,BNL), (BNL,NEWY), (NEWY,AOFA), (AOFA,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[NSLS, ORNL, 2] := (NSLS,BNL), (BNL,NEWY), (NEWY,AOFA), (AOFA,WASH), (WASH,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[NSLS, ORNL, 3] := (NSLS,BNL), (BNL,NEWY), (NEWY,BOST), (BOST,STAR), (STAR,AOFA), (AOFA,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[NSLS, ORNL, 4] := (NSLS,BNL), (BNL,NEWY), (NEWY,BOST), (BOST,STAR), (STAR,CHIC), (CHIC,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[NSLS, ORNL, 5] := (NSLS,BNL), (BNL,NEWY), (NEWY,BOST), (BOST,STAR), (STAR,CHIC), (CHIC,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[ALS, NERSC, 1] := (ALS,LBL), (LBL,SUNN), (SUNN,NERSC);
+set Paths[SSRL, ORNL, 1] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[SSRL, ORNL, 2] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[SSRL, ORNL, 3] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,CHIC), (CHIC,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[SSRL, ORNL, 4] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,KANS), (KANS,CHIC), (CHIC,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[SSRL, ORNL, 5] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,KANS), (KANS,CHIC), (CHIC,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[APS, ORNL, 1] := (APS,ANL), (ANL,STAR), (STAR,AOFA), (AOFA,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[APS, ORNL, 2] := (APS,ANL), (ANL,STAR), (STAR,CHIC), (CHIC,WASH), (WASH,ATLA), (ATLA,ORNL);
+set Paths[APS, ORNL, 3] := (APS,ANL), (ANL,STAR), (STAR,CHIC), (CHIC,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[APS, ORNL, 4] := (APS,ANL), (ANL,STAR), (STAR,AOFA), (AOFA,WASH), (WASH,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[APS, ORNL, 5] := (APS,ANL), (ANL,STAR), (STAR,CHIC), (CHIC,WASH), (WASH,NASH), (NASH,ATLA), (ATLA,ORNL);
+set Paths[LCLS, NERSC, 1] := (LCLS,SLAC), (SLAC,SUNN), (SUNN,NERSC);
+set Paths[NSLS, NERSC, 1] := (NSLS,BNL), (BNL,NEWY), (NEWY,AOFA), (AOFA,WASH), (WASH,NASH), (NASH,HOUS), (HOUS,ELPA), (ELPA,SUNN), (SUNN,NERSC);
+set Paths[NSLS, NERSC, 2] := (NSLS,BNL), (BNL,NEWY), (NEWY,BOST), (BOST,STAR), (STAR,CHIC), (CHIC,NASH), (NASH,HOUS), (HOUS,ELPA), (ELPA,SUNN), (SUNN,NERSC);
+set Paths[NSLS, NERSC, 3] := (NSLS,BNL), (BNL,NEWY), (NEWY,BOST), (BOST,STAR), (STAR,CHIC), (CHIC,KANS), (KANS,HOUS), (HOUS,ELPA), (ELPA,SUNN), (SUNN,NERSC);
+set Paths[NSLS, NERSC, 4] := (NSLS,BNL), (BNL,NEWY), (NEWY,BOST), (BOST,STAR), (STAR,CHIC), (CHIC,KANS), (KANS,DENV), (DENV,SACR), (SACR,SUNN), (SUNN,NERSC);
+set Paths[NSLS, NERSC, 5] := (NSLS,BNL), (BNL,NEWY), (NEWY,AOFA), (AOFA,WASH), (WASH,CHIC), (CHIC,NASH), (NASH,HOUS), (HOUS,ELPA), (ELPA,SUNN), (SUNN,NERSC);
+set Paths[APS, NERSC, 1] := (APS,ANL), (ANL,STAR), (STAR,CHIC), (CHIC,NASH), (NASH,HOUS), (HOUS,ELPA), (ELPA,SUNN), (SUNN,NERSC);
+set Paths[APS, NERSC, 2] := (APS,ANL), (ANL,STAR), (STAR,CHIC), (CHIC,KANS), (KANS,HOUS), (HOUS,ELPA), (ELPA,SUNN), (SUNN,NERSC);
+set Paths[APS, NERSC, 3] := (APS,ANL), (ANL,STAR), (STAR,CHIC), (CHIC,KANS), (KANS,DENV), (DENV,SACR), (SACR,SUNN), (SUNN,NERSC);
+set Paths[APS, NERSC, 4] := (APS,ANL), (ANL,STAR), (STAR,AOFA), (AOFA,WASH), (WASH,NASH), (NASH,HOUS), (HOUS,ELPA), (ELPA,SUNN), (SUNN,NERSC);
+set Paths[APS, NERSC, 5] := (APS,ANL), (ANL,STAR), (STAR,CHIC), (CHIC,WASH), (WASH,NASH), (NASH,HOUS), (HOUS,ELPA), (ELPA,SUNN), (SUNN,NERSC);
+set Paths[SSRL, ANL, 1] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[SSRL, ANL, 2] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,KANS), (KANS,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[SSRL, ANL, 3] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,SACR), (SACR,DENV), (DENV,KANS), (KANS,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[SSRL, ANL, 4] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,ALBQ), (ALBQ,DENV), (DENV,KANS), (KANS,CHIC), (CHIC,STAR), (STAR,ANL);
+set Paths[SSRL, ANL, 5] := (SSRL,SLAC), (SLAC,SUNN), (SUNN,ELPA), (ELPA,HOUS), (HOUS,NASH), (NASH,WASH), (WASH,AOFA), (AOFA,STAR), (STAR,ANL);
+
+#display Time;
+#display Sites;
+#display JobIds;
+#display Resources;
+#display Links;
+#display Jobs, T0, NumNodes, RunTime, DataSize;
+#display Paths;
