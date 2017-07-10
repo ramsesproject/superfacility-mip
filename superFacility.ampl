@@ -31,7 +31,7 @@ for {(j,s) in Jobs} {
 }
 option solver cplex;                # ... define solver & options
 #option cplex_options "mipdisplay=2 mipinterval=1000 mipgap=0.01 time=86400";
-option cplex_options "mipdisplay=2 mipinterval=1000 mipgap=0.03 time=864000 poolstub=Percentile poolcapacity=50";
+option cplex_options "mipdisplay=2 mipinterval=1000 mipgap=0.03 time=864000 poolstub=Percentile poolcapacity=20";
 solve;                            # ... solve the model/data
 
 #for {k in 1.._ncons} {
