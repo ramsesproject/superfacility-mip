@@ -8,7 +8,7 @@ A mixed integer programming model to solve design choices of super facility. The
 
 * AMPL with CPLEX solver
 
-* Computing node with ~1024 GB memory (or use virtual memory but it will be slow)
+* Computing node with ~1024 GB memory (or use virtual memory or reduce the number of thread to use, but either one will be slow)
 
 ## Run
 
