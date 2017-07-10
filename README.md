@@ -1,8 +1,8 @@
-# mixed integer programming model of superfacility
+# Introduction
 
 A mixed integer programming model to solve design choices of super facility
 
-# tutorial 
+# Tutorial 
 
 ## Requirement 
 
